@@ -84,70 +84,53 @@ local keyboard_rows = {
 }
 
 local bible_rp = {
-    ["RP"] = "SIMULAR A VIDA REAL",
-    ["ANT RP"] = "FAZER ALGO QUE NAO FARIA NA VIDA REAL | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["DM"] = "MATAR ALGUEM SEM MOTIVO | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["VDM"] = "USAR UM VEICULO COMO ARMA PRA MATAR ALGUEM | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["KOS"] = "MATAR ALGUEM SO POR SER DE UMA ORG RIVAL OU POR SER UM POLICIAL | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["MG"] = "MISTURAR OOC COM IC | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["IC"] = "DENTRO DO PERSONAGEM",
-    ["OOC"] = "FORA DO PERSONAGEM",
-    ["RK"] = "VOLTAR NA ACAO PRA SE VINGAR | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["DB"] = "ATIRAR DE DENTRO DO CARRO | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["PG"] = "FORCAR UMA ACAO | PUNICAO: 100 MINUTOS DE CADEIA (APENAS EM ACAO)",
-    ["RPFTW"] = "FAZER RP DE SEMPRE GANHAR",
-    ["PK"] = "MORTE DO PERSONAGEM",
-    ["CK"] = "MORTE PERMANENTE DO PERSONAGEM",
-    ["CB"] = "FICAR PROVOCANDO OS POLICIAIS PARA FORCAR UMA ACAO",
-    ["CL"] = "SAIR DO GAME EM SITUACOES DE RP | PUNICAO: 1 DIA DE BAN",
-    ["RDM"] = "MATAR PESSOAS ALEATORIAMENTE SEM MOTIVO | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["NRA"] = "ESTAR EM LOCAL PUBLICO ARMADO SEM MOTIVO | PUNICAO: 30 MINUTOS DE CADEIA (SE ESTIVER MIRANDO)",
-    ["HK"] = "MATAR USANDO HELISE DE HELICOPTERO | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["ASR"] = "AGREDIR SEM RAZAO | PUNICAO: 40 MINUTOS DE CADEIA (CORPO A CORPO)",
-    ["SK"] = "MATAR NO SPAWN DE JOGADORES | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["IFP"] = "INFORMACAO DO PERSONAGEM",
-    ["CMP"] = "CONTRA MAO PROPOSITAL",
-    ["CJ"] = "ROUBAR VEICULO COM PESSOA DENTRO SEM RP",
-    ["WH"] = "PULAR DE VEICULO EM ALTA VELOCIDADE",
-    ["FD"] = "FLOODAR NO CHAT | PUNICAO: 40 MINUTOS DE CADEIA (APOS 3 VEZES)",
-    ["AI"] = "ACAO IMPOSSIVEL",
-    ["ATP"] = "ATRAPALHAR ACAO DE PROPOSITO",
-    ["RT"] = "RELOGIO TRAVADO | PUNICAO: KICK",
-    ["ZZ"] = "CORRER EM ZIG ZAG",
-    ["CC"] = "CONTA COMPROMETIDA",
-    ["NS"] = "NAO TER AMOR A VIDA | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["TK"] = "MATAR MEMBRO DA PROPRIA ORGANIZACAO | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["FF"] = "MATAR MEMBRO DA ORGANIZACAO ALIADA",
-    ["MF"] = "FARMAR DINHEIRO OU ITENS E TRANSFERIR ENTRE CONTAS | PUNICAO: BAN PERMANENTE",
-    ["MIX"] = "ABREVIAR PALAVRAS IC | PUNICAO: 100 MINUTOS DE CADEIA",
-    ["BH"] = "CORRER PULANDO",
-    ["DARK RP"] = "ROLEPLAY COM RACISMO, ASSERIO, XENOFOBIA, ETC - PROIBIDO | PUNICAO: 1 DIA DE BAN (CASOS EXTREMOS: BAN PERMANENTE)",
-    ["AFK"] = "AUSENTE DO TECLADO DURANTE RP | PUNICAO: KICK (SE ESTIVER ATRAPALHANDO)",
-    ["SURF"] = "FICAR EM CIMA DE VEICULO EM MOVIMENTO | PUNICAO: 10 MINUTOS DE CADEIA",
-    ["MUC"] = "USAR CANAIS ERRADOS DE COMUNICACAO | PUNICAO: 60 MINUTOS DE CADEIA",
-    ["DARKRP"] = "ROLEPLAY COM ASSERIO, RACISMO, SUICIDIO, ETC - PROIBIDO | PUNICAO: 1 DIA DE BAN (CASOS EXTREMOS: BAN PERMANENTE)",
-    ["FP"] = "FINALIZAR PLAYER - NAO E PROIBIDO NO SERVIDOR"
+    ["IC"] = "Dentro do game. O mundo IC é onde você desenvolve e interpreta seu personagem.",
+    ["OOC"] = "Fora do game. O seu personagem vive em um mundo separado do nosso. O mundo real é chamado de OOC.",
+    ["ANTI-RP"] = "Não seguir o RP, desobedecer a biblia RP e fazer oque não faria em vida real. Roleplay significa interpretar um papel de personagem, onde você deverá gerenciar a sua vida com responsabilidade, consciência e bom senso, oque fugir disso é procedência maligna.",
+    ["PK / PD"] = "É a morte oficial do personagem. Quando você morre, perde TODA a memória do seu personagem, não lembrando quem te matou ou qualquer evento que levou a sua morte.",
+    ["BH"] = "É quando você anda pulando no jogo para ter alguma vantagem (ser mais rápido ou fugir).",
+    ["CB"] = "É quando você força perseguição policial, chamando atenção para querer dar fuga.",
+    ["CJ"] = "É quando você rouba um veículo tirando alguém da posição de motorista. Isso sem motivo aparente.",
+    ["CL"] = "É quando você sai do servidor em meio a ação para se beneficiar. Exemplo: Sair para não ser preso, abordado e assaltado.",
+    ["DB"] = "Muito semelhante com o conceito de VDM. O motorista ou passageiro não pode atirar pela janela do veículo.",
+    ["DM"] = "Quando você fere, atira, ou mata alguém sem motivo.",
+    ["RDM"] = "Seguindo o conceito de DM, o player não poderá cometer DM contra vários players consecutivamente.",
+    ["FP"] = "Finalizar Player.",
+    ["AFK"] = "Alguém que deixa seu personagem no IC parado, Por motivos OOC.",
+    ["RT"] = "Quando um lag acontece ou o dá crash no servidor, para as pessoas você está parado, porém para você tudo está tranquilo e as pessoas que estão paradas. É possível perceber se está de RT com a contagem do Pay Day no canto inferior esquerdo da tela do jogo. O relógio literalmente Trava.",
+    ["HK"] = "O termo HK refere-se a utilizar as hélices do helicóptero como uma arma letal para atacar/matar jogadores.",
+    ["KOS"] = "É quando você tenta ou consegue matar alguém que você reconheceu ao avistar sua roupa ou ID. (Atirar em um policial só por ser policial). (Atirar em um membro de org só por ele ser de org) etc.",
+    ["MG"] = "Misturar IC com OOC.",
+    ["MIX"] = "O termo MIX é um termo que se encaixa no MG. É quando você mistura chat do OOC com chat IC. Exemplo: 'MINHA MÃE TÁ ME CHAMANDO /OOC / VOCÊ NÃO SABE JOGAR /OOC'.",
+    ["NRA"] = "Puxar arma e/ou atirar e/ou ferir um jogador em área safe (ações não podem acontecer nesses locais).",
+    ["PG"] = "É quando você realiza algo que seria humanamente impossível de se realizar na vida real.",
+    ["SURF"] = "O termo SURF refere-se a praticar o ato de ficar em cima de um veículo em movimento, quebrando completamente a física.",
+    ["VDM"] = "É quando um jogador usa um veículo como arma para ferir ou matar outro jogador (atropelamento proposital).",
+    ["MUC"] = "Usar chats e meios de comunicação específicos de forma inapropriada ou errada. Ex: usar /anorg para farpar alguém.",
+    ["DARKRP"] = "O termo Dark RP significa realizar ações que envolvam ou remetam a assédio, tortura, importunação sexual, suicídio, racismo, LGBTQIA+fobia, xenofobia, intolerância religiosa, entre outras.",
+    ["NS"] = "Você precisa sempre jogar dando amor a sua vida, não arriscando a vida do personagem.",
+    ["RK"] = "Conceito que entra junto com PK. É extremamente proibido você se vingar de uma ação e pessoa que levou sua morte anteriormente.",
+    ["ASM"] = "O termo ASM (Agredir Sem Motivo) refere-se a praticar o ato de agressão em um player sem um motivo aparente.",
+    ["RPFTW"] = "Player faz a todo o custo o RP de sempre ganhar! nunca aceita perder, o mesmo quer sempre estar à frente dos outros jogadores.",
+    ["MF"] = "Criação de contas ou qualquer ato de abuso com intuito de farmar grana."
 }
 
 local keyword_mappings = {
     ["arma"] = {"VDM", "NRA", "HK", "DB"},
     ["policia"] = {"KOS", "CB"},
     ["veiculo"] = {"VDM", "DB", "CJ", "WH", "SURF", "CMP"},
-    ["player"] = {"DM", "RDM", "ASR", "SK", "FP", "PK", "CK"},
-    ["morte"] = {"DM", "RDM", "KOS", "HK", "SK", "PK", "CK", "TK", "FF"},
-    ["acao"] = {"ANT RP", "PG", "RK", "ATP", "AI", "CB", "CL", "NS"},
-    ["chat"] = {"FD", "MUC", "MIX"},
-    ["movimento"] = {"BH", "ZZ", "WH", "SURF"},
-    ["organizacao"] = {"TK", "FF", "MF"},
-    ["preconceito"] = {"DARK RP", "DARKRP"}
+    ["player"] = {"DM", "RDM", "ASM", "FP", "PK", "CK"},
+    ["morte"] = {"DM", "RDM", "KOS", "HK", "PK", "RK"},
+    ["acao"] = {"ANTI-RP", "PG", "RK", "NS", "CB", "CL"},
+    ["chat"] = {"MUC", "MIX"},
+    ["movimento"] = {"BH", "SURF"},
+    ["organizacao"] = {"MF"},
+    ["preconceito"] = {"DARKRP"},
+    ["conta"] = {"MF"},
+    ["vida"] = {"NS"}
 }
 
 local server_rules = {
-    ["UCP/Páginas/Regras"] = {
-        "1. Proibido divulgar informações pessoais de outros jogadores",
-        "2. Proibido qualquer tipo de discriminação ou preconceito",
-        "3. Respeitar todos os membros da comunidade"
-    },
     ["PROIBIÇÕES GERAIS"] = {
         "1. Proibido comércio externo, incluindo a venda de coins, dinheiro, veículos, casas, empresas, skins, acessórios ou contas.",
         "2. Proibido usar nicks ofensivos ou impróprios.",
@@ -162,7 +145,7 @@ local server_rules = {
         "11. Proibido o uso de sniper, exceto em territórios e invasões de favelas.",
         "12. Proibido spawn kill (matar jogadores ao entrar/sair de interiores ou favelas em abordagens).",
         "13. Proibido usar taser em trocas de tiros.",
-        "14. Proibido fazer ação de patrulhamento solo, obrigatório a presença de dois ou mais policiais da mesma corporação.",
+        "14. Proibido fazer ação de patrulhamento solo, obrigatório a presença de dois ou mais policiais.",
         "15. Proibido o uso de bombas (C4) com intuito de matar outro(s) player(s).",
         "16. Proibido o uso de mina terrestre em eventos.",
         "17. Proibido iniciar ação de loja com menos de 3 jogadores.",
@@ -179,7 +162,11 @@ local server_rules = {
         "28. Líderes que forem banidos temporariamente ou permanentemente receberão 3 (três) avisos, sub-líderes receberão apenas 1 aviso.",
         "29. Proibido puxar veículos VIP durante ações.",
         "30. Para ações de TR, o tempo deverá ser respeitado, proibido atirar antes da contagem inicial terminar.",
-        "31. Para ações de Casa roubável, poderão iniciar trocação somente no momento que der o anúncio da casa no chat global."
+        "31. Para ações de Casa roubável, poderão iniciar trocação somente no momento que der o anúncio da casa no chat global.",
+        "32. A corda só pode ser utilizada em ações de sequestro ou em ações de banco envolvendo reféns, exceto durante troca de tiros. Caso o refém seja um policial, ele só poderá ser rendido se estiver sozinho.",
+        "33. Proibido Algemar durante uma trocação de tiro.",
+        "34. Proibido fechar entradas com veículos ou qualquer tipo de objetos.",
+        "35. É proibido invadir casas (mapeadas ou não). A invasão ou abordagem só poderá ser feita por policiais mediante a um mandado de prisão."
     },
     ["CHAT"] = {
         "1. Proibido flood e spam.",
@@ -191,9 +178,7 @@ local server_rules = {
         "2. Proibido usar o VOIP enquanto estiver ferido."
     },
     ["TERRITÓRIOS"] = {
-        "1. Proibido participar de territórios fora da gangzone.",
-        "2. Proibido retornar aos territórios após ser hospitalizado.",
-        "3. O mínimo para iniciar um território é de 3 jogadores."
+        "1. O mínimo para iniciar um território é de 3 jogadores."
     },
     ["BANCO"] = {
         "1. Proibido matar o refém antes da negociação.",
@@ -201,34 +186,14 @@ local server_rules = {
     },
     ["SEQUESTROS"] = {
         "1. Proibido sequestrar sem iniciar a ação (/ab).",
-        "2. O mínimo para iniciar um sequestro é de 3 jogadores.",
-        "3. A integridade do refém SEMPRE deve ser priorizada.",
-        "4. Proibido bater no refém algemado, torturas, afogamento ou qualquer tipo de humilhação desnecessária.",
-        "5. Durante o sequestro, o refém deverá ser alimentado e suprido (água, comida e medicamentos).",
-        "6. Caso o refém desmaie de fome ou sede, deverá ser reanimado ou encaminhado ao hospital.",
-        "7. Caso seja notado que o refém não avisou sobre a necessidade de se alimentar propositalmente para sair da ação, o mesmo poderá ser punido.",
-        "8. Caso o refém seja muito exigente ou debochado quanto a isso, será encarado como NS.",
-        "9. Os sequestradores são obrigados a informar em quantos estão, assim como a quantidade de reféns e o local da negociação via chamado para a polícia.",
-        "10. Proibido o uso de helicópteros.",
-        "11. É limitado o número de reféns por sequestro: os sequestradores deverão manter até 6 reféns no máximo.",
-        "12. Tanto os sequestradores como os policiais devem priorizar a vida de seus próprios membros e dos reféns.",
-        "13. Toda negociação passa a ser área safe. Caso os bandidos efetuem disparos durante a negociação do refém, a ação se transforma em uma ação de rua (pode ser considerado Anti RP).",
-        "14. É proibida a entrada de novos participantes depois da ação já iniciada ou participantes que foram mortos voltarem à ação.",
-        "15. É proibido quebrar a negociação de ambas as partes (punição: Anti RP).",
-        "16. É permitido chamar o SAMU ao final da ação.",
-        "17. Se um indivíduo morrer por algum motivo e um SAMU aparecer, o mesmo poderá efetuar seu trabalho sem ser atrapalhado nem sofrer nenhum atentado ou dano.",
-        "18. O indivíduo que for reanimado por SAMU não poderá permanecer no local, a ação para ele se encerrou.",
-        "19. É proibido o uso de qualquer área da dependência de qualquer criminalidade (favela, territórios dominados, desmanches, mercado negro, etc.).",
-        "20. Os sequestradores poderão pedir armas, drogas e dinheiro no caso de organizações (negociável); a policiais, apenas dinheiro e fuga limpa; a civis, ao próprio sequestrado e/ou familiares, apenas 3% do valor total que o sequestrado tiver em sua conta."
+        "2. O mínimo para iniciar um sequestro é de 3 jogadores."
     },
     ["ASSALTO A REFÉM (/AB)"] = {
         "1. Proibido reagir ao assalto antes de 10 segundos da abordagem.",
         "2. Proibido exigir dinheiro do banco ou itens que a vítima não possua no momento."
     },
     ["DESMANCHE"] = {
-        "1. Proibido abordar (/ab) em desmanches, exceto quando o local estiver sob dominação de território, ações de caixa ou casa roubável.",
-        "2. No desmanche 3, é considerado safe zone toda a área coberta por território, sendo proibido: segurar armas, abordagens, apreensão de barraquinha, e qualquer ação de combate ou roubo que não seja Casa roubável, caixa eletrônico, e TR.",
-        "3. Fora de ação de TR, o território do desmanche 3 deverá ser safe, estando dominado ou pacificado."
+        "1. Proibido abordar (/ab) em desmanches, exceto quando o local estiver sob dominação de território, ações de caixa ou casa roubável."
     },
     ["CONTA"] = {
         "1. A conta é pessoal e intransferível. Caso seja punida ou banida, o servidor não se responsabiliza por seu uso."
@@ -240,6 +205,35 @@ local server_rules = {
     ["INVASÃO DE FAVELA"] = {
         "1. O mínimo para iniciar uma invasão de favela é de 5 jogadores.",
         "2. A invasão deve ser marcada com 15 minutos de antecedência e registrada no Discord com uma print e um dos motivos válidos, como anúncios de vendas na favela alvo pelo chat global."
+    },
+    ["BLITZ"] = {
+        "1. O mínimo de policiais para iniciar uma blitz são de 4 (quatro) jogadores. Os mesmos deverão permanecer até o final da mesma.",
+        "2. Apenas membros de corporação poderão voltar à blitz caso morram no local da blitz."
+    },
+    ["REGRAS GERAIS DE DENÚNCIAS NO SITE"] = {
+        "1. Todas as denúncias devem estar em suas respectivas categorias. Caso não esteja, a denúncia poderá ser recusada sem análise prévia.",
+        "2. A denúncia deve ser feita pelo próprio player ou por alguém que participou daquela ação em específico.",
+        "3. Caso seja punido por denúncia site, terá um prazo de 12 horas para contestar a punição. Após esse prazo, não terá direito a reclamações ou revisão.",
+        "4. Caso seja banido por denúncia site, terá um prazo de 24 horas para contestar a punição. Após esse prazo, não terá direito a reclamações ou revisão.",
+        "5. É completamente proibido desrespeitar ou ofender um player durante uma denúncia.",
+        "6. Ao realizar a denúncia, tenha ciência de que está denunciando a pessoa correta e que tem provas suficientes, a qual sua falta poderá acarretar em punição por falsa denúncia.",
+        "7. Em caso de provas com vídeo, verifique se o mesmo foi enviado. Caso conste quebra de link, poderá abrir nova denúncia corrigindo ou abrir um ticket para enviar o link a um administrador.",
+        "8. Após a denúncia ter sido averiguada e dadas as contra-provas, a equipe responsável avaliará o caso com base nas evidências apresentadas. Provas adicionais após a denúncia ter sido aceita ou recusada serão automaticamente rejeitadas.",
+        "9. Caso o denunciante cometa algum delito em sua prova, poderá ser punido.",
+        "10. Para que uma denúncia seja válida, deverá conter:",
+        "   I. Provas (Vídeo).",
+        "   II. RG do acusado, data, hora, logo e chat do servidor nas provas.",
+        "   III. Motivo e uma breve descrição do ocorrido.",
+        "   IV. Provas dentro de 24 horas após o ocorrido.",
+        "   V. Não poderá ter provas editadas, cortadas e/ou com algum mod que atrapalhe a visualização.",
+        "   VI. Não poderá ter provas tiradas com câmeras (celular, tablet ou outros) / prints / gravações por cima de outras gravações.",
+        "   VII. Não poderá criar uma denúncia utilizando provas coletadas por outros jogadores.",
+        "   VIII. Qualquer tipo de denúncia deverá conter início, meio e fim. Sendo assim, ao iniciar a ação/ocorrido, deverá começar a gravar.",
+        "11. Membros de organização ou corporação que tiverem uma denúncia aceita, irão gerar uma advertência para a organização ou corporação.",
+        "12. Líderes/Sub-Líderes de corporações ou organizações que tiverem uma denúncia aceita, irão gerar um aviso para a organização ou corporação.",
+        "13. Denúncias em categoria de CHEATER devem conter vídeo sem edições e com o áudio original do jogo, e a gravação do TAB mostrando o ping e o ID do acusado.",
+        "14. Denúncias envolvendo CL (Combat Logging) devem conter o vídeo do exato momento do quit, com 30 segundos adicionais que comprovem que foi um CL.",
+        "15. Denúncias que contiverem links que não sejam do YouTube ou links de sites terceiros serão recusadas instantaneamente."
     },
     ["REGRAS ADICIONAIS DO ROLEPLAY"] = {
         "1. Manter o roleplay em todas as situações.",
@@ -293,131 +287,81 @@ local server_rules = {
         "3. BlackList válida a partir da postagem, se aceita pelo responsável de orgs/corps.",
         "4. Líder que descumprir a BlackList receberá punição em sua org."
     },
-    ["REGRAS GERAIS DE DENÚNCIAS NO SITE"] = {
-        "1. A denúncia deve ser feita pelo próprio player ou por alguém que participou da ação em questão.",
-        "2. Caso punido por denúncia no site, o jogador tem 48 horas para contestar; após isso, não há direito a reclamações ou revisão.",
-        "3. Após denúncia feita/recebida, há 2 horas para postar contra-provas; após isso, a equipe decidirá (aceita/recusada).",
-        "4. Proibido desrespeitar ou ofender um player durante uma denúncia.",
-        "5. Denunciante deve garantir que denuncia a pessoa correta com provas suficientes; falta de provas pode levar a punição por falsa denúncia.",
-        "6. Em caso de vídeo, verificar se foi enviado; se houver quebra de link, abrir nova denúncia ou ticket com o link.",
-        "7. Provas adicionais após denúncia aceita/recusada serão rejeitadas, mesmo comprovando inocência/incriminação.",
-        "8. Denunciante que cometer delito em sua prova poderá ser punido.",
-        "9. Descumprimento de regras, Anti RP, uso de mods proibidos, etc., será punido, mesmo que a denúncia seja recusada.",
-        "10. Para denúncia ser válida, deve conter: I. Provas (vídeo); II. RG do acusado, data, logo e chat do servidor; III. Motivo e breve descrição; IV. Provas dentro de 24 horas; V. Sem edições/cortes; VI. Sem provas de celular/prints/gravações sobrepostas; VII. Sem provas de outros jogadores; VIII. Vídeos com no máximo 5 minutos; IX. Sem fotos inadequadas; X. Prints permitidos como prova, com data, hora e informações de conta.",
-        "11. Membros de org/corp com denúncia aceita geram 1 advertência para a org/corp.",
-        "12. Líderes/Sub-líderes com denúncia aceita geram 1 aviso para a org/corp.",
-        "13. Denúncias de CHEATER devem conter vídeo sem edições, com áudio original, TAB mostrando ping e ID do acusado.",
-        "14. Denúncias de CL devem conter vídeo do momento do quit, mostrando o player quitando; veículo VIP sumindo não é válido; denunciante não precisa postar 1 minuto adicional, mas acusado deve provar retorno em 1 minuto se alegar crash.",
-        "15. Denúncias com links não-YouTube ou de sites terceiros serão recusadas."
-    }
-}
-
-local discord_rules = {
-    ["REGRAS GERAIS DO DISCORD"] = {
-        "1. Comércio externo resultará em banimento, tanto no Discord quanto in-game.",
-        "2. Proibido qualquer forma de preconceito ou atos como assédio, abuso, racismo, homofobia e preconceitos (raça, cor, religião, bullying).",
-        "3. Proibido exibir links com conteúdo impróprio (+18, susto, gore, hack, etc.).",
-        "4. Proibida a divulgação de outros servidores ou links diretos.",
-        "5. Proibido flood; uso desnecessário de @ será penalizado.",
-        "6. Nicknames impróprios (pornografia, palavrões) são proibidos; 10 minutos para troca após advertência.",
-        "7. Proibido marcar cargos ou staff sem motivo plausível.",
-        "8. Proibido usar o VOIP enquanto estiver ferido.",
-        "9. Proibido ruídos constantes ou perturbadores em canais de áudio; evite músicas ou sons desagradáveis.",
-        "10. Proibido debater assuntos administrativos nos canais; abra ticket ou denuncie.",
-        "11. Proibido divulgações no bate-papo; use a aba 'OLX'.",
-        "12. Prazo para revisão de banimento: 7 dias.",
-        "13. Prazo para revisão de cadeia staff: 48 horas.",
-        "14. Prazo para revisão de denúncia aceita/recusada: 48 horas.",
-        "15. Canais de comunicação (bate-papo, chat-vip, memes, design) não são para tirar dúvidas; use #duvidas."
-    },
-    ["TICKETS"] = {
-        "1. Horário de atendimento: 09:00 às 00:00; após esse horário, a resposta pode variar.",
-        "2. Seja objetivo ao abrir ticket; evite discussões ou brincadeiras; forneça informações claras.",
-        "3. Tempo de espera após resposta do suporte: 20 minutos; sem interação, o ticket pode ser finalizado.",
-        "4. Após análise de provas, não serão aceitas discussões adicionais; o ticket será finalizado.",
-        "5. Punições do bot (Automod) não serão retiradas se o conteúdo for inaceitável.",
-        "6. Revisão de punição via ticket deve ter prova concreta; reabrir o mesmo caso por inconformidade resultará em penalidade.",
-        "7. Provas de punições podem ser editadas/censuradas por conter informações sigilosas; jogador pode exigir avaliação por responsável ou direção.",
-        "8. Banimentos pelo guardião não mostram provas ao jogador; direito de avaliação por superior é válido."
+    ["UCP/Páginas/Regras"] = {
+        "1. Proibido divulgar informações pessoais de outros jogadores",
+        "2. Proibido qualquer tipo de discriminação ou preconceito",
+        "3. Respeitar todos os membros da comunidade"
     }
 }
 
 local jail_punishments = {
-    ["10 MINUTOS"] = {
-        "- Surf",
-        "- ASM (Novatos)"
-    },
-    ["50 MINUTOS"] = {
-        "- FLOOD (Apos 3)",
-        "- NRA (Fazendo o ato de mirar)"
+    ["60 MINUTOS"] = {
+        "- NRA (Atirar sem anunciar)",
+        "- JBL HP (após 1 kick)",
+        "- JBL em Aeroporto (após 1 kick)"
     },
     ["80 MINUTOS"] = {
-        "- ASM (Agredindo sem motivo corpo a corpo)",
-        "- LOJA SOLO/DUO",
-        "- VIOLACAO DA BIBLIA RP",
+        "- Flood (Apos 3 vezes)",
+        "- ASM (Agredir sem motivo)",
         "- MUC Atendimento",
         "- MUC Duvida",
         "- MUC Missa",
         "- MUC NEWS",
         "- MUC OLX",
         "- MUC /Reportar",
-        "- MUC /ANORG",
-        "- MUC /AN (seja conversa ou farpa)",
-        "(OBS: TODOS OS MUCS PODERAO SER RELEVADOS A DEPENDER DO MOTIVO)",
-        "- PTR SOLO"
-    },
-    ["100 MINUTOS"] = {
-        "- ABUSO DE TAB"
+        "- MUC /AN Conversas/Farpas"
     },
     ["150 MINUTOS"] = {
-        "- DM (Ferir / Matar sem motivo)",
-        "- VDM (Ferir / Matar usando veiculo)",
-        "- KOS"
+        "- Loja Solo/em Dois"
     },
-    ["180 MINUTOS"] = {
+    ["200 MINUTOS"] = {
+        "- DB",
+        "- DM (Ferir / Matar sem motivo)",
+        "- VDM (Atropelar de propósito)",
+        "- KOS",
+        "- HK",
+        "- PTR Solo",
+        "- Sniper em Acao de Rua",
         "- Acao Safe",
-        "- Acao Desmanche (fora de TR / ACAO DE CX / CASA)",
+        "- Acao Desmanche (fora de TR ou Algemando em Acao)",
         "- AB Desmanche",
         "- Anti-RP",
         "- MG",
         "- MIX",
         "- PG (Apenas em Acao)",
-        "- TK"
-    },
-    ["200 MINUTOS"] = {
-        "- INVASAO SEM MARCAR",
+        "- TK",
+        "- Invasao sem marcar",
         "- NS (SEM AMOR A VIDA)",
         "- RDM (DMS CONSECUTIVOS)",
-        "- RK"
+        "- RK",
+        "- Spam Kill",
+        "- Fuga para interior em acao",
+        "- Assalto a Banco com menos de 5 pessoas"
     },
     ["300 MINUTOS"] = {
         "- Corrupcao (se n fizer parte do RP)",
-        "- DB"
+        "- Dark RP"
     },
     ["KICKS"] = {
-        "- RT / BUGADO / LAGGADO",
-        "- BUGANDO / ATRAPALHANDO EVENTO (STAFF)",
+        "- RT / BUGADO ( se for solicitado pelo jogador)",
+        "- Bugando / Atrapalhando Evento",
         "- AFK (Apenas se estiver atrapalhando RP e/ou no meio da pista)",
         "- TROCA NICK (se voltar, o admin banira)",
         "- SKIN DO CJ (se voltar, admin banira o IP)"
     },
     ["BANIMENTOS TEMPORÁRIOS"] = {
         "1 DIA",
-        "- Dark RP",
         "- CL",
-        "- Injuria, Difamacao ou deboche com incitacao a rebelião contra staffs",
         "",
         "5 dias",
-        "- Handlling",
+        "- Handling",
         "- Animacao vantajosa",
-        "- Anti RP extremo",
         "",
         "15 dias",
-        "- Qbug, Cbug, Ebug, etc...",
-        "- Demais cortes de Animacao",
-        "- Abuso de bugs em eventos",
+        "- Cortando animacao",
+        "- Anti-RP extremo",
         "",
-        "De 10 a 20 dias",
+        "16 dias",
         "- Ma conduta"
     },
     ["BANIMENTOS PERMANENTES"] = {
@@ -443,16 +387,38 @@ local jail_punishments = {
         "- Farpa media (com intuito de ofender: arrombado, retardado, lixo)",
         "- Utilizacao de nomes comparativos e apelidos: (bulliyng) - se a pessoa nao gostar de um apelido e o mesmo insistir",
         "- flood (apos prisao)",
+        "",
+        "2 DIAS",
         "- Palavreados de Baixo calao como ofensa: (EX: fdp, fds, tmnc; etc...)",
         "",
-        "5 DIAS",
+        "3 DIAS",
         "- Palavreados preconceituosos com deficiencia: (EX: tem down, Teleton, tijolinho)",
         "- Utilizacao de partes sexuais, partes intimas, e/ou palavriados vulgar obscenos (mesmo se for giria 'acalma a ppk' por ex)",
         "",
-        "10 Dias",
+        "5 Dias",
         "- Palavreados Preconceituosos, ofensas, ou deboche com Doencas Terminais.",
         "",
         "Qualquer vocabulario mais pesado, com intuito de assediar ou conter preconceito sera motivo de banimento + calar de 30 dias"
+    }
+}
+
+local discord_rules = {
+    ["REGRAS GERAIS DO DISCORD"] = {
+        "1. Não abuse do CAPS-LOCK. O uso excessivo de letras maiúsculas é considerado gritar ou chamar atenção desnecessariamente.",
+        "2. É proibido usar o chat de texto para áudio. Evite mandar uma mensagem por vez, isso pode ser considerado flood.",
+        "3. Não envie mensagens com spam, isso pode sobrecarregar o chat e atrapalhar a comunicação de outros jogadores.",
+        "4. É proibido divulgar qualquer tipo de conteúdo NSFW (conteúdo sexualmente explícito, nudez, pornografia ou qualquer tipo de conteúdo adulto), gore, links maliciosos ou vírus.",
+        "5. Qualquer tipo de ofensa ou ataque pessoal a outro membro é proibido e pode gerar punições.",
+        "6. É proibido o uso de nicks impróprios ou que causem qualquer tipo de ofensa ou constrangimento.",
+        "7. É proibido fazer apologia a qualquer tipo de crime (tráfico de drogas, porte ilegal de armas, entre outros), racismo, machismo, xenofobia, homofobia ou qualquer outro tipo de preconceito.",
+        "8. Se algum jogador estiver violando as regras, utilize os canais de denúncias para reportar o ocorrido. Evite fazer justiça com as próprias mãos.",
+        "9. Proibido tocar música nos canais de voz."
+    },
+    ["TICKETS"] = {
+        "1. O ticket é um canal de suporte e deve ser usado para denúncias, dúvidas ou reportar bugs.",
+        "2. Evite o uso de tickets desnecessariamente. Antes de abrir, verifique se sua dúvida já foi sanada por outro membro da equipe ou jogador.",
+        "3. Não ofenda a equipe no ticket, utilize uma linguagem respeitosa e clara para que sua demanda seja atendida da melhor forma possível.",
+        "4. Se o ticket for aberto para denúncia, é obrigatório enviar a prova do ocorrido (vídeo ou print)."
     }
 }
 
@@ -660,7 +626,6 @@ local function draw_rules_categories_window()
     imgui.Spacing()
 
     local categories = {
-        "UCP/Páginas/Regras",
         "PROIBIÇÕES GERAIS",
         "CHAT",
         "VOIP",
@@ -672,11 +637,13 @@ local function draw_rules_categories_window()
         "CONTA",
         "ÁREAS SAFES",
         "INVASÃO DE FAVELA",
+        "BLITZ",
+        "REGRAS GERAIS DE DENÚNCIAS NO SITE",
         "REGRAS ADICIONAIS DO ROLEPLAY",
         "REGRAS DE ORGANIZAÇÕES E CORPORAÇÕES",
         "CORREGEDORIA DE JUSTIÇA E TRIBUNAL FEDERAL",
         "CONFEDERAÇÃO CRIMINOSA E TRIBUNAL DO CRIME",
-        "REGRAS GERAIS DE DENÚNCIAS NO SITE"
+        "UCP/Páginas/Regras"
     }
 
     for i, category in ipairs(categories) do
@@ -709,7 +676,6 @@ local function draw_rules_window()
     imgui.Begin("REGRAS DO SERVIDOR", show_rules_window, imgui.WindowFlags.NoCollapse)
 
     local categories = {
-        "UCP/Páginas/Regras",
         "PROIBIÇÕES GERAIS",
         "CHAT",
         "VOIP",
@@ -721,11 +687,13 @@ local function draw_rules_window()
         "CONTA",
         "ÁREAS SAFES",
         "INVASÃO DE FAVELA",
+        "BLITZ",
+        "REGRAS GERAIS DE DENÚNCIAS NO SITE",
         "REGRAS ADICIONAIS DO ROLEPLAY",
         "REGRAS DE ORGANIZAÇÕES E CORPORAÇÕES",
         "CORREGEDORIA DE JUSTIÇA E TRIBUNAL FEDERAL",
         "CONFEDERAÇÃO CRIMINOSA E TRIBUNAL DO CRIME",
-        "REGRAS GERAIS DE DENÚNCIAS NO SITE"
+        "UCP/Páginas/Regras"
     }
     local selected = categories[selected_category[0] + 1]
     imgui.TextColored(imgui.ImVec4(0.0, 1.0, 1.0, 1.0), selected)
@@ -763,12 +731,9 @@ local function draw_jail_categories_window()
     imgui.Spacing()
 
     local categories = {
-        "10 MINUTOS",
-        "50 MINUTOS",
+        "60 MINUTOS",
         "80 MINUTOS",
-        "100 MINUTOS",
         "150 MINUTOS",
-        "180 MINUTOS",
         "200 MINUTOS",
         "300 MINUTOS",
         "KICKS",
@@ -807,12 +772,9 @@ local function draw_jail_window()
     imgui.Begin("TABELA DE PUNIÇÕES", show_jail_window, imgui.WindowFlags.NoCollapse)
 
     local categories = {
-        "10 MINUTOS",
-        "50 MINUTOS",
+        "60 MINUTOS",
         "80 MINUTOS",
-        "100 MINUTOS",
         "150 MINUTOS",
-        "180 MINUTOS",
         "200 MINUTOS",
         "300 MINUTOS",
         "KICKS",

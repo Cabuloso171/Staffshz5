@@ -26,53 +26,45 @@ local intervalo_a = 360
 local frases_aleatorias = {
     "Precisando de uma ajudinha da Staff? Utilize /atendimento! Em casos de ANT-RP use /reportar",
     "Duvidas ou problemas? Chame a staff com /atendimento! Anti-RP? Use /reportar",
-    "Servidor organizado e com todos nos! Use /atendimento para ajuda e /reportar para anti-RP",
-    "Staff disponivel para ajudar! Comando /atendimento e para denuncias /reportar",
+    "Chegou Agora na cidade nao sabe oq fazer! use /Atendimento e fale com um staff Foi vitma de ante rp use /reportar",
     "Problemas no servidor? /atendimento para ajuda e /reportar para jogadores quebram regras"
 }
 
-local texto_regras = [[
-Proibido comercio externo, incluindo a venda de coins, dinheiro, veiculos, casas, empresas, skins, acessorios ou contas.
-Proibido usar nicks ofensivos ou improprios.
-Proibido o uso de contas secundarias para farmar bens, itens ou dinheiro. Transferencias entre contas nao sao permitidas.
-Proibido ofender jogadores, a administracao ou o servidor.
-Proibido qualquer tipo de discriminacao, preconceito, homofobia, xenofobia ou atos que prejudiquem a imagem de alguem.
-Proibido divulgar outros servidores ou links externos.
-Proibido explorar bugs ou lags para obter vantagens.
-Proibido usar modificacoes ou trapacas que tragam beneficios indevidos.
-Proibido ofensas, calunias, difamacoes e discriminacoes OCC.
-Proibido abordar /ab em locais safes, exceto policiais.
-Proibido o uso de sniper, exceto em territorios e invasoes de favelas.
-Proibido spawn kill matar jogadores ao entrar/sair de interiores ou favelas em abordagens.
-Proibido usar taser em trocas de tiros.
-Proibido fazer acao de patrulhamento solo, obrigatorio a presenca de dois ou mais policiais da mesma corporacao.
-Proibido o uso de bombas C4 com intuito de matar outros players;
-Proibido o uso de mina terrestre em eventos;
-Proibido iniciar acao de loja com menos de 3 jogadores;
-Proibido iniciar qualquer tipo de acao/saquear contra policiais, mecanicos e samus fardados.
-Lideres e Sub-lideres tem obrigacao de manter atividades dentro da cidade, caso ambos fiquem 3 dias ou mais ausentes a org/corp sera resetada.
-Proibido correr para uma area safe/interior ou favela apos ter sido iniciado uma acao fora dela /ab ou trocacao de tiro.
-Proibido a utilizacao de JBL em area safe.
-Proibido portar armas medias/pesadas, cometer crimes e/ou intervir em acoes criminosas a paisana.
-Proibido apreender barraquinhas em areas de desmanche/favela, exceto em dominacao de favela.
-Proibido a cobranca de qualquer valor/item para efetuar o recrutamento de um player, seja corporacao, organizacao, hospital e/ou mecanica.
-Proibido a utilizacao de motivos invalidos para /algemar, obrigatorio um motivo coerente.
-Lideres/sub-lideres de organizacao/corporacao que infringirem alguma regra do servidor estarao gerando 1 um aviso para a organizacao/corporacao na qual lidera.
-Membros de organizacao/corporacao que forem banidos, irao gerar 1 uma advertencia para a organizacao/corporacao na qual participa.
-Lideres que forem banidos temporariamente ou permanentemente receberao 3 tres avisos, sub-lideres receberao apenas 1 aviso.
-Proibido puxar veiculos vip durante acoes.
-Para acoes de TR, o tempo devera ser respeitado, proibido atirar antes da contagem inicial terminar.
-Para acoes de Casa roubavel, poderao iniciar trocacao somente no momento que der o anuncio da casa no chat global.
-A corda so pode ser utilizada em acoes de sequestro ou em acoes de banco envolvendo refens, exceto durante troca de tiros. Caso o refem seja um policial, ele so podera ser rendido se estiver sozinho.
-Proibido algemar durante uma trocacao de tiro.
-Proibido fechar entradas com veiculos ou qualquer tipo de objetos.
-Proibido flood e spam no chat.
-Proibido usar a OLX para assuntos que nao envolvem vendas legais.
-Proibido usar comandos de anuncios para conversar.
-Proibido tocar musica no VOIP, exceto em locais reservados.
-Proibido usar o VOIP enquanto estiver ferido.
-A conta e pessoal e intransferivel. Caso seja punida ou banida, o servidor nao se responsabiliza por seu uso.
-]]
+local texto_regras = {
+"Proibido comercio externo incluindo a venda de coins dinheiro veiculos casas empresas skins acessorios ou contas",
+"Proibido usar nicks ofensivos ou improprios.",
+"Proibido o uso de contas secundarias para farmar bens, itens ou dinheiro Transferencias entre contas nao sao permitidas.",
+"Proibido ofender jogadores, a administracao ou o servidor.",
+"Proibido qualquer tipo de discriminacao preconceito homofobia xenofobia ou atos que prejudiquem a imagem de alguem.",
+"Proibido explorar bugs ou lags para obter vantagens.",
+"Proibido usar modificacoes ou trapacas que tragam beneficios indevidos.",
+"Proibido abordar /ab em locais safes exceto policiais.",
+"Proibido o uso de sniper exceto em territorios e invasoes de favelas.",
+"Proibido spawn kill matar jogadores ao entrar/sair de interiores ou favelas em abordagens.",
+"Proibido usar taser em trocas de tiros.",
+"Proibido fazer acao de patrulhamento solo obrigatorio a presenca de dois ou mais policiais da mesma corporacao.",
+"Proibido o uso de bombas C4 com intuito de matar outros players",
+"Proibido o uso de mina terrestre em eventos",
+"Proibido iniciar acao de loja com menos de 3 jogadores",
+"Proibido iniciar qualquer tipo de acao/saquear contra policiais mecanicos e samus fardados.",
+"Lideres e Sub-lideres tem obrigacao de manter atividades dentro da cidade caso ambos fiquem 3 dias ou mais ausentes a org/corp sera resetada.",
+"Proibido correr para uma area safe/interior ou favela apos ter sido iniciado uma acao fora dela/ab ou trocacao de tiro.",
+"Proibido a utilizacao de JBL em area safe.",
+"Proibido portar armas medias/pesadas cometer crimes e/ou intervir em acoes criminosas a paisana.",
+"Proibido apreender barraquinhas em areas de desmanche/favela exceto em dominacao de favela.",
+"Proibido a cobranca de qualquer valor/item para efetuar o recrutamento de um player seja corporacao organizacao hospital e/ou mecanica.",
+"Proibido a utilizacao de motivos invalidos para /algemar obrigatorio um motivo coerente.",
+"Proibido puxar veiculos vip durante acoes.",
+"Para acoes de TR o tempo devera ser respeitado proibido atirar antes da contagem inicial terminar.",
+"Para acoes de Casa roubavel poderao iniciar trocacao somente no momento que der o anuncio da casa no chat global.",
+"Proibido algemar durante uma trocacao de tiro.",
+"Proibido fechar entradas com veiculos ou qualquer tipo de objetos.",
+"Proibido usar a OLX para assuntos que nao envolvem vendas legais.",
+"Proibido usar comandos de anuncios para conversar.",
+"Proibido tocar musica no VOIP exceto em locais reservados
+Proibido usar o VOIP enquanto estiver ferido.",
+"A conta e pessoal e intransferivel. Caso seja punida ou banida, o servidor nao se responsabiliza por seu uso.",
+}
 
 local total_pontos = 30
 local largura_onda = 60

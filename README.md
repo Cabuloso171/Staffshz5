@@ -1,4 +1,4 @@
--- BY NUKY - MENU DE INFORMAÇÕES HZ5
+-- BY NUKY - MENU DE INFORMACOES HZ5
 local imgui = require "mimgui"
 local ffi = require "ffi"
 
@@ -84,341 +84,225 @@ local keyboard_rows = {
 }
 
 local bible_rp = {
-    ["IC"] = "Dentro do game. O mundo IC é onde você desenvolve e interpreta seu personagem.",
-    ["OOC"] = "Fora do game. O seu personagem vive em um mundo separado do nosso. O mundo real é chamado de OOC.",
-    ["ANTI-RP"] = "Não seguir o RP, desobedecer a biblia RP e fazer oque não faria em vida real. Roleplay significa interpretar um papel de personagem, onde você deverá gerenciar a sua vida com responsabilidade, consciência e bom senso, oque fugir disso é procedência maligna.",
-    ["PK / PD"] = "É a morte oficial do personagem. Quando você morre, perde TODA a memória do seu personagem, não lembrando quem te matou ou qualquer evento que levou a sua morte.",
-    ["BH"] = "É quando você anda pulando no jogo para ter alguma vantagem (ser mais rápido ou fugir).",
-    ["CB"] = "É quando você força perseguição policial, chamando atenção para querer dar fuga.",
-    ["CJ"] = "É quando você rouba um veículo tirando alguém da posição de motorista. Isso sem motivo aparente.",
-    ["CL"] = "É quando você sai do servidor em meio a ação para se beneficiar. Exemplo: Sair para não ser preso, abordado e assaltado.",
-    ["DB"] = "Muito semelhante com o conceito de VDM. O motorista ou passageiro não pode atirar pela janela do veículo.",
-    ["DM"] = "Quando você fere, atira, ou mata alguém sem motivo.",
-    ["RDM"] = "Seguindo o conceito de DM, o player não poderá cometer DM contra vários players consecutivamente.",
-    ["FP"] = "Finalizar Player.",
-    ["AFK"] = "Alguém que deixa seu personagem no IC parado, Por motivos OOC.",
-    ["RT"] = "Quando um lag acontece ou o dá crash no servidor, para as pessoas você está parado, porém para você tudo está tranquilo e as pessoas que estão paradas. É possível perceber se está de RT com a contagem do Pay Day no canto inferior esquerdo da tela do jogo. O relógio literalmente Trava.",
-    ["HK"] = "O termo HK refere-se a utilizar as hélices do helicóptero como uma arma letal para atacar/matar jogadores.",
-    ["KOS"] = "É quando você tenta ou consegue matar alguém que você reconheceu ao avistar sua roupa ou ID. (Atirar em um policial só por ser policial). (Atirar em um membro de org só por ele ser de org) etc.",
-    ["MG"] = "Misturar IC com OOC.",
-    ["MIX"] = "O termo MIX é um termo que se encaixa no MG. É quando você mistura chat do OOC com chat IC. Exemplo: 'MINHA MÃE TÁ ME CHAMANDO /OOC / VOCÊ NÃO SABE JOGAR /OOC'.",
-    ["NRA"] = "Puxar arma e/ou atirar e/ou ferir um jogador em área safe (ações não podem acontecer nesses locais).",
-    ["PG"] = "É quando você realiza algo que seria humanamente impossível de se realizar na vida real.",
-    ["SURF"] = "O termo SURF refere-se a praticar o ato de ficar em cima de um veículo em movimento, quebrando completamente a física.",
-    ["VDM"] = "É quando um jogador usa um veículo como arma para ferir ou matar outro jogador (atropelamento proposital).",
-    ["MUC"] = "Usar chats e meios de comunicação específicos de forma inapropriada ou errada. Ex: usar /anorg para farpar alguém.",
-    ["DARKRP"] = "O termo Dark RP significa realizar ações que envolvam ou remetam a assédio, tortura, importunação sexual, suicídio, racismo, LGBTQIA+fobia, xenofobia, intolerância religiosa, entre outras.",
-    ["NS"] = "Você precisa sempre jogar dando amor a sua vida, não arriscando a vida do personagem.",
-    ["RK"] = "Conceito que entra junto com PK. É extremamente proibido você se vingar de uma ação e pessoa que levou sua morte anteriormente.",
-    ["ASM"] = "O termo ASM (Agredir Sem Motivo) refere-se a praticar o ato de agressão em um player sem um motivo aparente.",
-    ["RPFTW"] = "Player faz a todo o custo o RP de sempre ganhar! nunca aceita perder, o mesmo quer sempre estar à frente dos outros jogadores.",
-    ["MF"] = "Criação de contas ou qualquer ato de abuso com intuito de farmar grana."
+    ["IC"] = "DENTRO DO JOGO, ONDE VOCE DESENVOLVE E INTERPRETA SEU PERSONAGEM.",
+    ["OOC"] = "FORA DO JOGO, O MUNDO REAL, SEPARADO DO MUNDO DO SEU PERSONAGEM.",
+    ["ANTI-RP"] = "NAO SEGUIR O RP, FAZER O QUE NAO FARIA NA VIDA REAL | 200 MINUTOS DE CADEIA",
+    ["PK"] = "MORTE OFICIAL DO PERSONAGEM. PERDE TODA A MEMORIA DO QUE LEVOU A MORTE.",
+    ["BH"] = "ANDAR PULANDO PARA TER VANTAGEM DE VELOCIDADE OU PARA FUGIR.",
+    ["CB"] = "FORCAR PERSEGUICAO POLICIAL, CHAMANDO ATENCAO PARA QUERER DAR FUGA.",
+    ["CJ"] = "ROUBAR UM VEICULO TIRANDO ALGUEM DA POSICAO DE MOTORISTA SEM MOTIVO APARENTE | 200 MINUTOS DE CADEIA",
+    ["CL"] = "SAIR DO SERVIDOR EM MEIO A ACAO PARA SE BENEFICIAR | 1 DIA DE BAN",
+    ["DB"] = "ATIRAR PELA JANELA DE UM VEICULO EM MOVIMENTO | 200 MINUTOS DE CADEIA",
+    ["DM"] = "FERIR, ATIRAR OU MATAR ALGUEM SEM MOTIVO | 200 MINUTOS DE CADEIA",
+    ["RDM"] = "COMETER DM CONTRA VARIOS PLAYERS CONSECUTIVAMENTE | 200 MINUTOS DE CADEIA",
+    ["FP"] = "FINALIZAR PLAYER.",
+    ["AFK"] = "DEIXAR O PERSONAGEM PARADO POR MOTIVOS OOC | KICK",
+    ["RT"] = "O RELOGIO DO PAY DAY TRAVA, INDICANDO UM LAG OU CRASH NO SERVIDOR | KICK",
+    ["HK"] = "USAR AS HELICES DO HELICOPTERO COMO ARMA PARA ATACAR OU MATAR JOGADORES | 200 MINUTOS DE CADEIA",
+    ["KOS"] = "TENTAR OU MATAR ALGUEM QUE VOCE RECONHECEU AO AVISTAR A ROUPA OU ID | 200 MINUTOS DE CADEIA",
+    ["MG"] = "MISTURAR IC COM OOC | 200 MINUTOS DE CADEIA",
+    ["MIX"] = "MISTURAR CHAT OOC COM CHAT IC | 200 MINUTOS DE CADEIA",
+    ["NRA"] = "PUXAR ARMA, ATIRAR OU FERIR UM JOGADOR EM AREA SAFE | 60 MINUTOS DE CADEIA",
+    ["PG"] = "REALIZAR ALGO QUE SERIA HUMANAMENTE IMPOSSIVEL NA VIDA REAL | 200 MINUTOS DE CADEIA",
+    ["SURF"] = "FICAR EM CIMA DE UM VEICULO EM MOVIMENTO, QUEBRANDO A FISICA | 10 MINUTOS DE CADEIA",
+    ["VDM"] = "USAR UM VEICULO COMO ARMA PARA FERIR OU MATAR OUTRO JOGADOR | 200 MINUTOS DE CADEIA",
+    ["MUC"] = "USAR CHATS E MEIOS DE COMUNICACAO ESPECIFICOS DE FORMA INAPROPRIADA OU ERRADA | 80 MINUTOS DE CADEIA",
+    ["DARKRP"] = "REALIZAR ACOES QUE ENVOLVAM ASSESIO, TORTURA, IMPORTUNACAO SEXUAL, SUICIDIO, RACISMO, LGBTQIA+FOBIA, XENOFOBIA, INTOLERANCIA RELIGIOSA, ETC | 300 MINUTOS DE CADEIA",
+    ["NS"] = "JOGAR SEM TER AMOR A VIDA, ARRISCANDO A VIDA DO PERSONAGEM SEM MOTIVO LOGICO | 200 MINUTOS DE CADEIA",
+    ["RK"] = "SE VINGAR DE UMA ACAO OU PESSOA QUE LEVOU A SUA MORTE ANTERIORMENTE | 200 MINUTOS DE CADEIA",
+    ["ASM"] = "AGREDIR UM PLAYER SEM UM MOTIVO APARENTE | 80 MINUTOS DE CADEIA",
+    ["RPFTW"] = "FAZER O RP DE SEMPRE GANHAR, NUNCA ACEITANDO PERDER.",
+    ["MF"] = "CRIACAO DE CONTAS OU QUALQUER ATO DE ABUSO COM O INTUITO DE FARMAR DINHEIRO | BAN PERMANENTE"
 }
 
 local keyword_mappings = {
-    ["arma"] = {"VDM", "NRA", "HK", "DB"},
-    ["policia"] = {"KOS", "CB"},
-    ["veiculo"] = {"VDM", "DB", "CJ", "WH", "SURF", "CMP"},
-    ["player"] = {"DM", "RDM", "ASM", "FP", "PK", "CK"},
-    ["morte"] = {"DM", "RDM", "KOS", "HK", "PK", "RK"},
-    ["acao"] = {"ANTI-RP", "PG", "RK", "NS", "CB", "CL"},
-    ["chat"] = {"MUC", "MIX"},
-    ["movimento"] = {"BH", "SURF"},
-    ["organizacao"] = {"MF"},
-    ["preconceito"] = {"DARKRP"},
-    ["conta"] = {"MF"},
-    ["vida"] = {"NS"}
+    ["ARMA"] = {"VDM", "NRA", "HK", "DB"},
+    ["POLICIA"] = {"KOS", "CB"},
+    ["VEICULO"] = {"VDM", "DB", "CJ", "SURF", "HK"},
+    ["PLAYER"] = {"DM", "RDM", "ASM", "FP", "PK", "RK", "NS"},
+    ["MORTE"] = {"DM", "RDM", "KOS", "HK", "PK", "RK"},
+    ["ACAO"] = {"ANTI-RP", "PG", "RK", "CL", "NS", "RPFTW"},
+    ["CHAT"] = {"MIX", "MUC"},
+    ["MOVIMENTO"] = {"BH", "SURF"},
+    ["ORGANIZACAO"] = {"MF"},
+    ["PRECONCEITO"] = {"DARKRP"}
 }
 
 local server_rules = {
-    ["PROIBIÇÕES GERAIS"] = {
-        "1. Proibido comércio externo, incluindo a venda de coins, dinheiro, veículos, casas, empresas, skins, acessórios ou contas.",
-        "2. Proibido usar nicks ofensivos ou impróprios.",
-        "3. Proibido o uso de contas secundárias para farmar bens, itens ou dinheiro. Transferências entre contas não são permitidas.",
-        "4. Proibido ofender jogadores, a administração ou o servidor.",
-        "5. Proibido qualquer tipo de discriminação, preconceito, homofobia, xenofobia ou atos que prejudiquem a imagem de alguém.",
-        "6. Proibido divulgar outros servidores ou links externos.",
-        "7. Proibido explorar bugs ou lags para obter vantagens.",
-        "8. Proibido usar modificações ou trapaças que tragam benefícios indevidos.",
-        "9. Proibido ofensas, calúnias, difamações e discriminações OOC.",
-        "10. Proibido abordar (/ab) em locais safes, exceto policiais.",
-        "11. Proibido o uso de sniper, exceto em territórios e invasões de favelas.",
-        "12. Proibido spawn kill (matar jogadores ao entrar/sair de interiores ou favelas em abordagens).",
-        "13. Proibido usar taser em trocas de tiros.",
-        "14. Proibido fazer ação de patrulhamento solo, obrigatório a presença de dois ou mais policiais.",
-        "15. Proibido o uso de bombas (C4) com intuito de matar outro(s) player(s).",
-        "16. Proibido o uso de mina terrestre em eventos.",
-        "17. Proibido iniciar ação de loja com menos de 3 jogadores.",
-        "18. Proibido iniciar qualquer tipo de ação/saquear contra policiais, mecânicos e samus fardados.",
-        "19. Líderes e Sub-líderes têm obrigação de manter atividades dentro da cidade, caso ambos fiquem 3 dias ou mais ausentes a org/corp será resetada.",
-        "20. Proibido correr para uma área safe/interior ou favela após ter sido iniciado uma ação fora dela (/ab ou trocação de tiro).",
-        "21. Proibido a utilização de JBL em área safe.",
-        "22. Proibido portar armas médias/pesadas, cometer crimes e/ou intervir em ações criminosas à paisana.",
-        "23. Proibido apreender barraquinhas em áreas de desmanche/favela, exceto em dominação de favela.",
-        "24. Proibido a cobrança de qualquer valor/item para efetuar o recrutamento de um player, seja corporação, organização, hospital e/ou mecânica.",
-        "25. Proibido a utilização de motivos inválidos para (/algemar), obrigatório um motivo coerente.",
-        "26. Líderes/sub-líderes de organização/corporação que infringirem alguma regra do servidor estarão gerando 1 (um) aviso para a organização/corporação na qual lidera.",
-        "27. Membros de organização/corporação que forem banidos, irão gerar 1 (uma) advertência para a organização/corporação na qual participa.",
-        "28. Líderes que forem banidos temporariamente ou permanentemente receberão 3 (três) avisos, sub-líderes receberão apenas 1 aviso.",
-        "29. Proibido puxar veículos VIP durante ações.",
-        "30. Para ações de TR, o tempo deverá ser respeitado, proibido atirar antes da contagem inicial terminar.",
-        "31. Para ações de Casa roubável, poderão iniciar trocação somente no momento que der o anúncio da casa no chat global.",
-        "32. A corda só pode ser utilizada em ações de sequestro ou em ações de banco envolvendo reféns, exceto durante troca de tiros. Caso o refém seja um policial, ele só poderá ser rendido se estiver sozinho.",
-        "33. Proibido Algemar durante uma trocação de tiro.",
-        "34. Proibido fechar entradas com veículos ou qualquer tipo de objetos.",
-        "35. É proibido invadir casas (mapeadas ou não). A invasão ou abordagem só poderá ser feita por policiais mediante a um mandado de prisão."
+    ["UCP/Paginas/Regras"] = {
+        "1. PROIBIDO DIVULGAR INFORMACOES PESSOAIS DE OUTROS JOGADORES",
+        "2. PROIBIDO QUALQUER TIPO DE DISCRIMINACAO OU PRECONCEITO",
+        "3. RESPEITAR TODOS OS MEMBROS DA COMUNIDADE"
+    },
+    ["PROIBICOES GERAIS"] = {
+        "1. PROIBIDO COMERCIO EXTERNO, INCLUINDO A VENDA DE COINS, DINHEIRO, VEICULOS, CASAS, EMPRESAS, SKINS, ACESSORIOS OU CONTAS.",
+        "2. PROIBIDO USAR NICKS OFENSIVOS OU IMPROPRIOS.",
+        "3. PROIBIDO O USO DE CONTAS SECUNDARIAS PARA FARMAR BENS, ITENS OU DINHEIRO. TRANSFERENCIAS ENTRE CONTAS NAO SAO PERMITIDAS.",
+        "4. PROIBIDO OFENDER JOGADORES, A ADMINISTRACAO OU O SERVIDOR.",
+        "5. PROIBIDO QUALQUER TIPO DE DISCRIMINACAO, PRECONCEITO, HOMOFOBIA, XENOFOBIA OU ATOS QUE PREJUDIQUEM A IMAGEM DE ALGUEM.",
+        "6. PROIBIDO DIVULGAR OUTROS SERVIDORES OU LINKS EXTERNOS.",
+        "7. PROIBIDO EXPLORAR BUGS OU LAGS PARA OBTER VANTAGENS.",
+        "8. PROIBIDO USAR MODIFICACOES OU TRAPACAS QUE TRAGAM BENEFICIOS INDEVIDOS.",
+        "9. PROIBIDO OFENSAS, CALUNIAS, DIFAMACOES E DISCRIMINACOES OOC.",
+        "10. PROIBIDO ABORDAR (/AB) EM LOCAIS SAFES, EXCETO POLICIAIS.",
+        "11. PROIBIDO O USO DE SNIPER, EXCETO EM TERRITORIOS E INVASOES DE FAVELAS.",
+        "12. PROIBIDO SPAWN KILL (MATAR JOGADORES AO ENTRAR/SAIR DE INTERIORES OU FAVELAS EM ABORDAGENS).",
+        "13. PROIBIDO USAR TASER EM TROCAS DE TIROS.",
+        "14. PROIBIDO FAZER ACAO DE PATRULHAMENTO SOLO, OBRIGATORIO A PRESENCA DE DOIS OU MAIS POLICIAIS.",
+        "15. PROIBIDO O USO DE BOMBAS (C4) COM INTUITO DE MATAR OUTRO(S) PLAYER(S).",
+        "16. PROIBIDO O USO DE MINA TERRESTRE EM EVENTOS.",
+        "17. PROIBIDO INICIAR ACAO DE LOJA COM MENOS DE 3 JOGADORES.",
+        "18. PROIBIDO INICIAR QUALQUER TIPO DE ACAO/SAQUEAR CONTRA POLICIAIS, MECANICOS E SAMUS FARDADOS.",
+        "19. LIDERES E SUB-LIDERES TEM OBRIGACAO DE MANTER ATIVIDADES DENTRO DA CIDADE, CASO AMBOS FIQUEM 3 DIAS OU MAIS AUSENTES A ORG/CORP SERA RESETADA.",
+        "20. PROIBIDO CORRER PARA UMA AREA SAFE/INTERIOR OU FAVELA APOS TER SIDO INICIADO UMA ACAO FORA DELA (/AB OU TROCACAO DE TIRO).",
+        "21. PROIBIDO A UTILIZACAO DE JBL EM AREA SAFE",
+        "22. PROIBIDO PORTAR ARMAS MEDIAS/PESADAS, COMETER CRIMES E/OU INTERVIR EM ACOES CRIMINOSAS A PAISANA",
+        "23. PROIBIDO APREENDER BARRAQUINHAS EM AREAS DE DESMANCHE/FAVELA, EXCETO EM DOMINACAO DE FAVELA.",
+        "24. PROIBIDO A COBRANCA DE QUALQUER VALOR/ITEM PARA EFETUAR O RECRUTAMENTO DE UM PLAYER, SEJA CORPORACAO, ORGANIZACAO, HOSPITAL E/OU MECANICA.",
+        "25. PROIBIDO A UTILIZACAO DE MOTIVOS INVALIDOS PARA (/ALGEMAR), OBRIGATORIO UM MOTIVO COERENTE.",
+        "26. LIDERES/SUB-LIDERES DE ORGANIZACAO/CORPORACAO QUE INFRINGIREM ALGUMA REGRA DO SERVIDOR ESTARAO GERANDO 1 (UM) AVISO PARA A ORGANIZACAO/CORPORACAO NA QUAL LIDERAM.",
+        "27. MEMBROS DE ORGANIZACAO/CORPORACAO QUE FOREM BANIDOS, IRAO GERAR 1 (UMA) ADVERTENCIA PARA A ORGANIZACAO/CORPORACAO NA QUAL PARTICIPA.",
+        "28. LIDERES QUE FOREM BANIDOS TEMPORARIAMENTE OU PERMANENTEMENTE RECEBERAO 3 (TRES) AVISOS, SUB-LIDERES RECEBERAO APENAS 1 AVISO.",
+        "29. PROIBIDO PUXAR VEICULOS VIP DURANTE ACOES.",
+        "30. PARA ACOES DE TR, O TEMPO DEVERA SER RESPEITADO, PROIBIDO ATIRAR ANTES DA CONTAGEM INICIAL TERMINAR.",
+        "31. PARA ACOES DE CASA ROUBAVEL, PODERAO INICIAR TROCACAO SOMENTE NO MOMENTO QUE DER O ANUNCIO DA CASA NO CHAT GLOBAL.",
+        "32. A CORDA SO PODE SER UTILIZADA EM ACOES DE SEQUESTRO OU EM ACOES DE BANCO ENVOLVENDO REFENS, EXCETO DURANTE TROCA DE TIROS. CASO O REFEM SEJA UM POLICIAL, ELE SO PODERA SER RENDIDO SE ESTIVER SOZINHO.",
+        "33. PROIBIDO ALGEMA DURANTE UMA TROCACAO DE TIRO.",
+        "34. PROIBIDO FECHAR ENTRADAS COM VEICULOS OU QUALQUER TIPO DE OBJETOS.",
+        "35. E PROIBIDO INVADIR CASAS (MAPEADAS OU NAO). A INVASAO OU ABORDAGEM SO PODERA SER FEITA POR POLICIAIS MEDIANTE A UM MANDADO DE PRISAO."
     },
     ["CHAT"] = {
-        "1. Proibido flood e spam.",
-        "2. Proibido usar a OLX para assuntos que não envolvem vendas legais.",
-        "3. Proibido usar comandos de anúncios para conversar."
+        "1. PROIBIDO FLOOD E SPAM.",
+        "2. PROIBIDO USAR A OLX PARA ASSUNTOS QUE NAO ENVOLVEM VENDAS LEGAIS.",
+        "3. PROIBIDO USAR COMANDOS DE ANUNCIOS PARA CONVERSAR."
     },
     ["VOIP"] = {
-        "1. Proibido tocar música no VOIP, exceto em locais reservados (Casa, Empresa e/ou festas particulares).",
-        "2. Proibido usar o VOIP enquanto estiver ferido."
+        "1. PROIBIDO TOCAR MUSICA NO VOIP, EXCETO EM LOCAIS RESERVADOS (CASA, EMPRESA E/OU FESTAS PARTICULARES).",
+        "2. PROIBIDO USAR O VOIP ENQUANTO ESTIVER FERIDO."
     },
-    ["TERRITÓRIOS"] = {
-        "1. O mínimo para iniciar um território é de 3 jogadores."
+    ["TERRITORIOS"] = {
+        "1. O MINIMO PARA INICIAR UM TERRITORIO E DE 3 JOGADORES."
     },
     ["BANCO"] = {
-        "1. Proibido matar o refém antes da negociação.",
-        "2. O mínimo para iniciar um assalto ao banco é de 5 jogadores."
+        "1. PROIBIDO MATAR O REFEM ANTES DA NEGOCIACAO.",
+        "2. O MINIMO PARA INICIAR UM ASSALTO AO BANCO E DE 5 JOGADORES."
     },
     ["SEQUESTROS"] = {
-        "1. Proibido sequestrar sem iniciar a ação (/ab).",
-        "2. O mínimo para iniciar um sequestro é de 3 jogadores."
+        "1. PROIBIDO SEQUESTRAR SEM INICIAR A ACAO (/AB).",
+        "2. O MINIMO PARA INICIAR UM SEQUESTRO E DE 3 JOGADORES."
     },
-    ["ASSALTO A REFÉM (/AB)"] = {
-        "1. Proibido reagir ao assalto antes de 10 segundos da abordagem.",
-        "2. Proibido exigir dinheiro do banco ou itens que a vítima não possua no momento."
+    ["ASSALTO A REFEM (/AB)"] = {
+        "1. PROIBIDO REAGIR AO ASSALTO ANTES DE 10 SEGUNDOS DA ABORDAGEM.",
+        "2. PROIBIDO EXIGIR DINHEIRO DO BANCO OU ITENS QUE A VITIMA NAO POSSUA NO MOMENTO."
     },
     ["DESMANCHE"] = {
-        "1. Proibido abordar (/ab) em desmanches, exceto quando o local estiver sob dominação de território, ações de caixa ou casa roubável."
+        "1. PROIBIDO ABORDAR (/AB) EM DESMANCHES, EXCETO QUANDO O LOCAL ESTIVER SOB DOMINACAO DE TERRITORIO, ACOES DE CAIXA OU CASA ROUBAVEL."
     },
     ["CONTA"] = {
-        "1. A conta é pessoal e intransferível. Caso seja punida ou banida, o servidor não se responsabiliza por seu uso."
+        "1. A CONTA E PESSOAL E INTRANSFERIVEL. CASO SEJA PUNIDA OU BANIDA, O SERVIDOR NAO SE RESPONSABILIZA POR SEU USO."
     },
-    ["ÁREAS SAFES"] = {
-        "1. Áreas seguras incluem: hospitais, oficinas mecânicas, HQs de profissões, praças, fábricas de materiais/drogas, hotéis (apenas interior), concessionárias, delegacias, desmanches e bancos (exceto durante assaltos).",
-        "2. Interiores de casas e empresas não são áreas seguras."
+    ["AREAS SAFES"] = {
+        "1. AREAS SEGURAS INCLUEM: HOSPITAIS, OFICINAS MECANICAS, HQS DE PROFISSOES, PRACAS, FABRICAS DE MATERIAIS/DROGAS, HOTEIS (APENAS INTERIOR), CONCESSIONARIAS, DELEGACIAS, DESMANCHES E BANCOS (EXCETO DURANTE ASSALTOS).",
+        "2. INTERIORES DE CASAS E EMPRESAS NAO SAO AREAS SEGURAS."
     },
-    ["INVASÃO DE FAVELA"] = {
-        "1. O mínimo para iniciar uma invasão de favela é de 5 jogadores.",
-        "2. A invasão deve ser marcada com 15 minutos de antecedência e registrada no Discord com uma print e um dos motivos válidos, como anúncios de vendas na favela alvo pelo chat global."
+    ["INVASAO DE FAVELA"] = {
+        "1. O MINIMO PARA INICIAR UMA INVASAO DE FAVELA E DE 5 JOGADORES.",
+        "2. A INVASAO DEVE SER MARCADA COM 15 MINUTOS DE ANTECEDENCIA E REGISTRADA NO DISCORD COM UMA PRINT E UM DOS MOTIVOS VALIDOS, COMO ANUNCIOS DE VENDAS NA FAVELA ALVO PELO CHAT GLOBAL."
     },
     ["BLITZ"] = {
-        "1. O mínimo de policiais para iniciar uma blitz são de 4 (quatro) jogadores. Os mesmos deverão permanecer até o final da mesma.",
-        "2. Apenas membros de corporação poderão voltar à blitz caso morram no local da blitz."
-    },
-    ["REGRAS GERAIS DE DENÚNCIAS NO SITE"] = {
-        "1. Todas as denúncias devem estar em suas respectivas categorias. Caso não esteja, a denúncia poderá ser recusada sem análise prévia.",
-        "2. A denúncia deve ser feita pelo próprio player ou por alguém que participou daquela ação em específico.",
-        "3. Caso seja punido por denúncia site, terá um prazo de 12 horas para contestar a punição. Após esse prazo, não terá direito a reclamações ou revisão.",
-        "4. Caso seja banido por denúncia site, terá um prazo de 24 horas para contestar a punição. Após esse prazo, não terá direito a reclamações ou revisão.",
-        "5. É completamente proibido desrespeitar ou ofender um player durante uma denúncia.",
-        "6. Ao realizar a denúncia, tenha ciência de que está denunciando a pessoa correta e que tem provas suficientes, a qual sua falta poderá acarretar em punição por falsa denúncia.",
-        "7. Em caso de provas com vídeo, verifique se o mesmo foi enviado. Caso conste quebra de link, poderá abrir nova denúncia corrigindo ou abrir um ticket para enviar o link a um administrador.",
-        "8. Após a denúncia ter sido averiguada e dadas as contra-provas, a equipe responsável avaliará o caso com base nas evidências apresentadas. Provas adicionais após a denúncia ter sido aceita ou recusada serão automaticamente rejeitadas.",
-        "9. Caso o denunciante cometa algum delito em sua prova, poderá ser punido.",
-        "10. Para que uma denúncia seja válida, deverá conter:",
-        "   I. Provas (Vídeo).",
-        "   II. RG do acusado, data, hora, logo e chat do servidor nas provas.",
-        "   III. Motivo e uma breve descrição do ocorrido.",
-        "   IV. Provas dentro de 24 horas após o ocorrido.",
-        "   V. Não poderá ter provas editadas, cortadas e/ou com algum mod que atrapalhe a visualização.",
-        "   VI. Não poderá ter provas tiradas com câmeras (celular, tablet ou outros) / prints / gravações por cima de outras gravações.",
-        "   VII. Não poderá criar uma denúncia utilizando provas coletadas por outros jogadores.",
-        "   VIII. Qualquer tipo de denúncia deverá conter início, meio e fim. Sendo assim, ao iniciar a ação/ocorrido, deverá começar a gravar.",
-        "11. Membros de organização ou corporação que tiverem uma denúncia aceita, irão gerar uma advertência para a organização ou corporação.",
-        "12. Líderes/Sub-Líderes de corporações ou organizações que tiverem uma denúncia aceita, irão gerar um aviso para a organização ou corporação.",
-        "13. Denúncias em categoria de CHEATER devem conter vídeo sem edições e com o áudio original do jogo, e a gravação do TAB mostrando o ping e o ID do acusado.",
-        "14. Denúncias envolvendo CL (Combat Logging) devem conter o vídeo do exato momento do quit, com 30 segundos adicionais que comprovem que foi um CL.",
-        "15. Denúncias que contiverem links que não sejam do YouTube ou links de sites terceiros serão recusadas instantaneamente."
-    },
-    ["REGRAS ADICIONAIS DO ROLEPLAY"] = {
-        "1. Manter o roleplay em todas as situações.",
-        "2. Proibido quebrar o roleplay.",
-        "3. Seguir as regras gerais de roleplay.",
-        "4. As regras do servidor devem prevalecer e serem seguidas acima de tudo.",
-        "5. As regras de organizações e corporações devem ser seguidas, mas as exceções descritas podem alterar temporariamente essas regras para melhor desempenho do RP.",
-        "6. Toda regra postada no Discord em abas específicas é considerada oficial.",
-        "7. O Horizonte Roleplay 2 prioriza o Roleplay, não o PVP. Jogadores devem seguir lógica, história e objetivos, e ir contra isso pode resultar em punição.",
-        "8. Para comprar uma corporação, o jogador deve abrir um ticket no Discord oficial para avaliação de maturidade e responsabilidade."
-    },
-    ["REGRAS DE ORGANIZAÇÕES E CORPORAÇÕES"] = {
-        "1. A partir do 10º dia da criação, a organização ou corporação deve ter no mínimo 10 membros ativos.",
-        "2. Se no 11º dia não atingir 10 membros ativos, será aplicada uma advertência e multa administrativa.",
-        "3. Acumulação de 10 advertências consecutivas pode levar à reinicialização da organização/corporação.",
-        "4. Para renovação a cada 30 dias, a organização/corporação deve ter mais de 15 membros ativos.",
-        "5. Membros que se conectam esporadicamente (mais de 3 dias off) ou não participam não são considerados ativos.",
-        "6. Organizações/corporações com advertência ativa não podem participar de eventos especiais até regularização."
-    },
-    ["CORREGEDORIA DE JUSTIÇA E TRIBUNAL FEDERAL"] = {
-        "1. A Corregedoria investiga denúncias, irregularidades, avalia conduta de servidores públicos e fiscaliza princípios constitucionais.",
-        "2. Pode interferir em ações policiais, prefeitura e corporações, composta por líderes, sub-líderes, prefeito, vice-prefeito e um presidente (juiz).",
-        "3. Punições possíveis: afastamento do membro + blacklist de uma semana, prisão (staff) + afastamento, redução de salário, advertência, PD de 1 a 15 dias (banimento temporário, autorizado pela direção).",
-        "4. Membro setado na corporação não pode sair antes de 7 dias, ou resultará em banimento de 5 dias.",
-        "5. Membros afastados temporariamente não podem ser recrutados por outras corporações antes de 7 dias (blacklist temporária).",
-        "6. Recrutamento só após análise da ficha criminal junto ao responsável de Org e Corp, com o indivíduo fora de ações criminosas por 5 dias.",
-        "7. Proibida troca de nome sem abrir ticket, só após renovação e skin a cada 10 dias.",
-        "8. Proibido usar skin de outra corporação, salvo permissão da corregedoria.",
-        "9. Proibido usar skin diferente da corporação em PTR com outras guarnições.",
-        "10. Proibido desacato entre líderes/membros ou conversas paralelas pelo /QRR.",
-        "11. Proibido oficial fazer ações criminosas (desmanche, ações de família VIP, caixinha, assalto, sequestro, carro forte, roubo ao banco).",
-        "12. Pode fazer parte de família, desde que não faça missões ilegais.",
-        "13. Proibido usar tag de família VIP em serviço.",
-        "14. Proibido usar mochila de dinheiro e móveis roubados como acessórios em serviço.",
-        "15. Proibido prender policiais em serviço, à paisana ou com estrelas, salvo se estiverem com produtos ilegais.",
-        "16. Oficial à paisana pode portar combat shotgun e desert para defesa; outras armas podem levar à condução e prisão.",
-        "17. Proibido mal uso de armas (Taser, M4, MP5) para brincadeiras com oficiais.",
-        "18. Proibido usar VTRs (QSV) sem uniforme da corporação.",
-        "19. Proibido prender/injetar player que outra corporação já tenha feito flagrante e algemado.",
-        "20. Proibido desacatar ou desobedecer um oficial da corregedoria.",
-        "21. Proibido investigação não autorizada pela corregedoria.",
-        "22. Proibido corrupção como vendas de armas, capacetes e coletes (permitido se for do VIP).",
-        "23. Proibido desacatar cidadão abordado e fazer revista sem avisar.",
-        "24. Proibido revistar player do sexo oposto; na ausência de mesmo sexo, pedir apenas RG.",
-        "25. Em caso de mochila de dinheiro, policial pode pedir que o cidadão retire o acessório para provar que é acessório; descumprimento é motivo de prisão.",
-        "26. Proibido atos de preconceito, ofensas, deboche ou qualquer ato que contrarie a ética profissional do policial."
-    },
-    ["CONFEDERAÇÃO CRIMINOSA E TRIBUNAL DO CRIME"] = {
-        "1. Favelas podem se unir para ações, desde que ambas estejam de acordo e cumpram o RP.",
-        "2. Existe BlackList para organizações: líder pode solicitar que outras orgs não recrutem um membro expulso por 7 dias, com motivo grave, explicação e provas claras.",
-        "3. BlackList válida a partir da postagem, se aceita pelo responsável de orgs/corps.",
-        "4. Líder que descumprir a BlackList receberá punição em sua org."
-    },
-    ["UCP/Páginas/Regras"] = {
-        "1. Proibido divulgar informações pessoais de outros jogadores",
-        "2. Proibido qualquer tipo de discriminação ou preconceito",
-        "3. Respeitar todos os membros da comunidade"
+        "1. O MINIMO DE POLICIAIS PARA INICIAR UMA BLITZ, SAO DE 4 (QUATRO) JOGADORES; OS MESMOS DEVERAO PERMANECER ATE O FINAL DA MESMA.",
+        "2. APENAS MEMBROS DE CORPORACAO PODERAO VOLTAR A BLITZ CASO MORRAM NO LOCAL DA BLITZ."
     }
 }
 
 local jail_punishments = {
     ["60 MINUTOS"] = {
-        "- NRA (Atirar sem anunciar)",
-        "- JBL HP (após 1 kick)",
-        "- JBL em Aeroporto (após 1 kick)"
+        "- NRA (ATIRAR SEM ANUNCIAR)",
+        "- JBL HP (APOS 1 KICK)",
+        "- JBL EM AEROPORTO (APOS 1 KICK)"
     },
     ["80 MINUTOS"] = {
-        "- Flood (Apos 3 vezes)",
-        "- ASM (Agredir sem motivo)",
-        "- MUC Atendimento",
-        "- MUC Duvida",
-        "- MUC Missa",
-        "- MUC NEWS",
-        "- MUC OLX",
-        "- MUC /Reportar",
-        "- MUC /AN Conversas/Farpas"
+        "- FLOOD (APOS 3 VEZES)",
+        "- ASM (AGREDIR SEM MOTIVO)",
+        "- MUCS (ATENDIMENTO, DUVIDA, MISSA, NEWS, OLX, /REPORTAR)",
+        "- /AN CONVERSAS/FARPAs"
     },
     ["150 MINUTOS"] = {
-        "- Loja Solo/em Dois"
+        "- LOJA SOLO/EM DOIS"
     },
     ["200 MINUTOS"] = {
         "- DB",
-        "- DM (Ferir / Matar sem motivo)",
-        "- VDM (Atropelar de propósito)",
+        "- DM (FERIR / MATAR SEM MOTIVO)",
+        "- ACAO EM SAFE",
+        "- ACAO DESMANCHE FORA DE TR OU ALGEMANDO EM ACAO",
+        "- AB DESMANCHE",
         "- KOS",
-        "- HK",
-        "- PTR Solo",
-        "- Sniper em Acao de Rua",
-        "- Acao Safe",
-        "- Acao Desmanche (fora de TR ou Algemando em Acao)",
-        "- AB Desmanche",
-        "- Anti-RP",
         "- MG",
-        "- MIX",
-        "- PG (Apenas em Acao)",
+        "- PG (EM ACAO)",
         "- TK",
-        "- Invasao sem marcar",
-        "- NS (SEM AMOR A VIDA)",
-        "- RDM (DMS CONSECUTIVOS)",
-        "- RK",
-        "- Spam Kill",
-        "- Fuga para interior em acao",
-        "- Assalto a Banco com menos de 5 pessoas"
+        "- VDM (ATROPELAR DE PROPOSITO)",
+        "- HK",
+        "- PTR SOLO",
+        "- SNIPER EM ACAO DE RUA",
+        "- ASSALTO A BANCO COM MENOS DE 5 PESSOAS",
+        "- ANTI-RP",
+        "- INVASAO SEM MARCAR",
+        "- NS (NO SENSE)",
+        "- RDM (RANDOM DEATHMATCH)",
+        "- RK (REVENGE KILL)",
+        "- SPAM KILL",
+        "- CORRER PARA INTERIOR EM ACAO",
+        "- FUGA PARA INTERIOR APOS ACAO (SAFE/FAVELA/INTERIOR)"
     },
     ["300 MINUTOS"] = {
-        "- Corrupcao (se n fizer parte do RP)",
-        "- Dark RP"
+        "- CORRUPCAO (SEM CONTEXTO RP)",
+        "- DARK RP"
     },
     ["KICKS"] = {
-        "- RT / BUGADO ( se for solicitado pelo jogador)",
-        "- Bugando / Atrapalhando Evento",
-        "- AFK (Apenas se estiver atrapalhando RP e/ou no meio da pista)",
-        "- TROCA NICK (se voltar, o admin banira)",
-        "- SKIN DO CJ (se voltar, admin banira o IP)"
+        "- RT / BUGADO (SE FOR SOLICITADO PELO JOGADOR)",
+        "- BUGANDO / ATRAPALHANDO EVENTO"
     },
-    ["BANIMENTOS TEMPORÁRIOS"] = {
-        "1 DIA",
-        "- CL",
-        "",
-        "5 dias",
-        "- Handling",
-        "- Animacao vantajosa",
-        "",
-        "15 dias",
-        "- Cortando animacao",
-        "- Anti-RP extremo",
-        "",
-        "16 dias",
-        "- Ma conduta"
+    ["BANIMENTOS TEMPORARIOS"] = {
+        "- MA CONDUTA (STAFF): 16 DIAS",
+        "- CORTANDO ANIMACAO: 15 DIAS",
+        "- HANDLING: 5 DIAS",
+        "- ANIMACAO VANTAJOSA: 5 DIAS",
+        "- ANTI-RP EXTREMO: 15 DIAS",
+        "- COMBAT LOG (CL): 1 DIA"
     },
     ["BANIMENTOS PERMANENTES"] = {
-        "(se e mod e da beneficio = Cheater)",
-        "- Cheater no Geral (Mods Proibidos em geral)",
-        "- Abuso de Bugs",
-        "- Comercio Ilegal",
-        "- Divulgacao de outros servidores",
-        "- Ofensa ao Servidor",
-        "- DARK RP EXTREMO (homofobia, preconceito, assedio, ETC...)",
-        "- Nick Improprio",
-        "- Skin do CJ apos primeiro kick (BAN APENAS IP)",
-        "- Money Farm"
+        "- CHEATER (MODS PROIBIDOS)",
+        "- ABUSO DE BUGS",
+        "- COMERCIO ILEGAL",
+        "- DIVULGACAO DE SERVIDORES",
+        "- OFENSA AO SERVIDOR",
+        "- NICK IMPROPRIO",
+        "- MONEY FARM"
     },
-    ["Tabela da censura (Mute Temporário de comunicação)"] = {
-        "1- O mute nao censura o chat whatsapp IC",
-        "2- O mute so sera aplicado se identificado que foi dito algo com intuito de ofender e ou debochar saindo do RP. (chingamentos feitos por chat vip serao interpretados como ofensa)",
-        "3- Farpas comuns e pequenas ofensas (Dentro do RP) como: fraco, tapete, corno, gado, doido, idiota, imbecil, etc... sao permitidas",
-        "4- O Mute pode ser acompanhado de outras punicoes, seja cadeias e/ou banimentos",
-        "5- Se algo nao estiver na tabela ou nao se encaixar em nenhum dos topicos abaixo, sera avaliado e aplicado entre 2 e 10 dias",
-        "",
-        "1 DIA",
-        "- Farpa media (com intuito de ofender: arrombado, retardado, lixo)",
-        "- Utilizacao de nomes comparativos e apelidos: (bulliyng) - se a pessoa nao gostar de um apelido e o mesmo insistir",
-        "- flood (apos prisao)",
-        "",
-        "2 DIAS",
-        "- Palavreados de Baixo calao como ofensa: (EX: fdp, fds, tmnc; etc...)",
-        "",
-        "3 DIAS",
-        "- Palavreados preconceituosos com deficiencia: (EX: tem down, Teleton, tijolinho)",
-        "- Utilizacao de partes sexuais, partes intimas, e/ou palavriados vulgar obscenos (mesmo se for giria 'acalma a ppk' por ex)",
-        "",
-        "5 Dias",
-        "- Palavreados Preconceituosos, ofensas, ou deboche com Doencas Terminais.",
-        "",
-        "Qualquer vocabulario mais pesado, com intuito de assediar ou conter preconceito sera motivo de banimento + calar de 30 dias"
+    ["TABELA DE CENSURA (MUTE TEMPORARIO)"] = {
+        "- FARPA FRACA (FRACO, CORNO, GADO...): PERMITIDO",
+        "- FARPA MEDIA (ARROMBADO, LIXO...): 1 DIA",
+        "- BULLYING (APELIDOS/COMPARACOES): 1 DIA",
+        "- FLOOD APOS PRISAO: 1 DIA",
+        "- BAIXO CALAO (VIADO, FDP, ETC): 2 DIAS",
+        "- PRECONCEITO COM DEFICIENCIA: 3 DIAS",
+        "- CONTEUDO SEXUAL/EXPLICITO: 3 DIAS",
+        "- PRECONCEITO COM DOENCAS: 5 DIAS",
+        "QUALQUER VOCABULARIO MAIS PESADO, COM INTUITO DE ASSEDIAR OU CONTER PRECONCEITO SERA MOTIVO DE BANIMENTO + CALAR DE 30 DIAS"
     }
 }
 
 local discord_rules = {
     ["REGRAS GERAIS DO DISCORD"] = {
-        "1. Não abuse do CAPS-LOCK. O uso excessivo de letras maiúsculas é considerado gritar ou chamar atenção desnecessariamente.",
-        "2. É proibido usar o chat de texto para áudio. Evite mandar uma mensagem por vez, isso pode ser considerado flood.",
-        "3. Não envie mensagens com spam, isso pode sobrecarregar o chat e atrapalhar a comunicação de outros jogadores.",
-        "4. É proibido divulgar qualquer tipo de conteúdo NSFW (conteúdo sexualmente explícito, nudez, pornografia ou qualquer tipo de conteúdo adulto), gore, links maliciosos ou vírus.",
-        "5. Qualquer tipo de ofensa ou ataque pessoal a outro membro é proibido e pode gerar punições.",
-        "6. É proibido o uso de nicks impróprios ou que causem qualquer tipo de ofensa ou constrangimento.",
-        "7. É proibido fazer apologia a qualquer tipo de crime (tráfico de drogas, porte ilegal de armas, entre outros), racismo, machismo, xenofobia, homofobia ou qualquer outro tipo de preconceito.",
-        "8. Se algum jogador estiver violando as regras, utilize os canais de denúncias para reportar o ocorrido. Evite fazer justiça com as próprias mãos.",
-        "9. Proibido tocar música nos canais de voz."
+        "1. PROIBIDO QUALQUER TIPO DE OFENSA OU DESRESPEITO AOS MEMBROS E STAFFS.",
+        "2. PROIBIDO A DIVULGACAO DE SERVIDORES, PRODUTOS OU CONTEUDOS EXTERNOS.",
+        "3. PROIBIDO O USO DE NICKS OFENSIVOS.",
+        "4. PROIBIDO FLOOD, SPAM E USO DE BOTS SEM PERMISSAO.",
+        "5. PROIBIDO QUALQUER CONTEUDO SEXUAL, RACISTA, HOMOFOBICO OU QUE INCITE A VIOLENCIA."
     },
     ["TICKETS"] = {
-        "1. O ticket é um canal de suporte e deve ser usado para denúncias, dúvidas ou reportar bugs.",
-        "2. Evite o uso de tickets desnecessariamente. Antes de abrir, verifique se sua dúvida já foi sanada por outro membro da equipe ou jogador.",
-        "3. Não ofenda a equipe no ticket, utilize uma linguagem respeitosa e clara para que sua demanda seja atendida da melhor forma possível.",
-        "4. Se o ticket for aberto para denúncia, é obrigatório enviar a prova do ocorrido (vídeo ou print)."
+        "1. APOS CRIAR UM TICKET, AGUARDE O ATENDIMENTO. PROIBIDO MARCAR STAFFS.",
+        "2. PROIBIDO CRIAR TICKETS SEM MOTIVO OU COM INTUITO DE ATRAPALHAR."
     }
 }
 
@@ -451,15 +335,26 @@ local function process_input()
     else
         search_results = {}
         last_search_keyword = text:lower()
-        for code, desc in pairs(bible_rp) do
-            if desc:lower():find(last_search_keyword) then
-                table.insert(search_results, {code = code, desc = desc})
+        local found_in_keywords = false
+        if keyword_mappings[last_search_keyword] then
+            found_in_keywords = true
+            for _, code in ipairs(keyword_mappings[last_search_keyword]) do
+                if bible_rp[code] then
+                    table.insert(search_results, {code = code, desc = bible_rp[code]})
+                end
+            end
+        else
+            for code, desc in pairs(bible_rp) do
+                if desc:lower():find(last_search_keyword) then
+                    table.insert(search_results, {code = code, desc = desc})
+                end
             end
         end
+
         if #search_results > 0 then
             show_search_window[0] = true
         else
-            sampAddChatMessage("Nenhum resultado encontrado para '" .. text .. "'!", 0xFFFF)
+            sampAddChatMessage("NENHUM RESULTADO ENCONTRADO PARA '" .. text .. "'!", 0xFFFF)
         end
     end
     ffi.copy(input_text, "")
@@ -578,21 +473,21 @@ local function draw_keyboard()
     end
 
     imgui.SetCursorPos(imgui.ImVec2(start_x + 40 + 7 * 45, start_y))
-    if imgui.Button("Enter", key_sizes.enter) then
+    if imgui.Button("ENTER", key_sizes.enter) then
         process_input()
         imgui.SetMouseCursor(imgui.MouseCursor.Arrow)
     end
 
     start_y = start_y + 50
     imgui.SetCursorPos(imgui.ImVec2((imgui.GetWindowWidth() - key_sizes.space.x) * 0.5, start_y))
-    if imgui.Button("Espaco", key_sizes.space) then
+    if imgui.Button("ESPACO", key_sizes.space) then
         append_to_input(" ")
         imgui.SetMouseCursor(imgui.MouseCursor.Arrow)
     end
 
     start_y = start_y + 45
     imgui.SetCursorPos(imgui.ImVec2(imgui.GetWindowWidth() - key_sizes.backspace.x - 30, start_y))
-    if imgui.Button("Back", key_sizes.backspace) then
+    if imgui.Button("BACK", key_sizes.backspace) then
         backspace_input()
         imgui.SetMouseCursor(imgui.MouseCursor.Arrow)
     end
@@ -601,7 +496,7 @@ local function draw_keyboard()
 end
 
 local function draw_footer()
-    local footer = "NukY Mods © 2025 | v1.7"
+    local footer = "NUKY MODS © 2025 | V1.7"
     imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(footer).x) * 0.5)
     imgui.TextColored(imgui.ImVec4(0.6, 0.6, 0.6, 1.0), footer)
 end
@@ -619,31 +514,26 @@ local function draw_rules_categories_window()
     style.WindowBorderSize = 5.0
 
     imgui.PushStyleColor(imgui.Col.Border, border_colors[border_color_index])
-    imgui.Begin("Categorias de Regras", show_rules_categories, imgui.WindowFlags.NoCollapse)
+    imgui.Begin("CATEGORIAS DE REGRAS", show_rules_categories, imgui.WindowFlags.NoCollapse)
 
     imgui.TextColored(imgui.ImVec4(0.0, 1.0, 1.0, 1.0), "SELECIONE UMA CATEGORIA:")
     imgui.Separator()
     imgui.Spacing()
 
     local categories = {
-        "PROIBIÇÕES GERAIS",
+        "UCP/PAGINAS/REGRAS",
+        "PROIBICOES GERAIS",
         "CHAT",
         "VOIP",
-        "TERRITÓRIOS",
+        "TERRITORIOS",
         "BANCO",
         "SEQUESTROS",
-        "ASSALTO A REFÉM (/AB)",
+        "ASSALTO A REFEM (/AB)",
         "DESMANCHE",
         "CONTA",
-        "ÁREAS SAFES",
-        "INVASÃO DE FAVELA",
-        "BLITZ",
-        "REGRAS GERAIS DE DENÚNCIAS NO SITE",
-        "REGRAS ADICIONAIS DO ROLEPLAY",
-        "REGRAS DE ORGANIZAÇÕES E CORPORAÇÕES",
-        "CORREGEDORIA DE JUSTIÇA E TRIBUNAL FEDERAL",
-        "CONFEDERAÇÃO CRIMINOSA E TRIBUNAL DO CRIME",
-        "UCP/Páginas/Regras"
+        "AREAS SAFES",
+        "INVASAO DE FAVELA",
+        "BLITZ"
     }
 
     for i, category in ipairs(categories) do
@@ -676,24 +566,19 @@ local function draw_rules_window()
     imgui.Begin("REGRAS DO SERVIDOR", show_rules_window, imgui.WindowFlags.NoCollapse)
 
     local categories = {
-        "PROIBIÇÕES GERAIS",
-        "CHAT",
-        "VOIP",
-        "TERRITÓRIOS",
-        "BANCO",
-        "SEQUESTROS",
-        "ASSALTO A REFÉM (/AB)",
-        "DESMANCHE",
-        "CONTA",
-        "ÁREAS SAFES",
-        "INVASÃO DE FAVELA",
-        "BLITZ",
-        "REGRAS GERAIS DE DENÚNCIAS NO SITE",
-        "REGRAS ADICIONAIS DO ROLEPLAY",
-        "REGRAS DE ORGANIZAÇÕES E CORPORAÇÕES",
-        "CORREGEDORIA DE JUSTIÇA E TRIBUNAL FEDERAL",
-        "CONFEDERAÇÃO CRIMINOSA E TRIBUNAL DO CRIME",
-        "UCP/Páginas/Regras"
+        "UCP/PAGINAS/REGRAS",
+        "PROIBICOES GERAIS",
+        "TOCPICO 02 - CHAT",
+        "TOPICO 03 - VOIP",
+        "TOPICO 04 - TERRITORIOS",
+        "TOPICO 05 - BANCO",
+        "TOPICO 06 - SEQUESTROS",
+        "TOPICO 07 - ASSALTO A REFEM (/AB)",
+        "TOPICO 08 - DESMANCHE",
+        "TOPICO 09 - CONTA",
+        "TOPICO 10 - AREAS SAFES",
+        "TOPICO 11 - INVASAO DE FAVELA",
+        "TOPICO 12 - BLITZ"
     }
     local selected = categories[selected_category[0] + 1]
     imgui.TextColored(imgui.ImVec4(0.0, 1.0, 1.0, 1.0), selected)
@@ -724,7 +609,7 @@ local function draw_jail_categories_window()
     style.WindowBorderSize = 5.0
 
     imgui.PushStyleColor(imgui.Col.Border, border_colors[border_color_index])
-    imgui.Begin("Categorias de Cadeias", show_jail_categories, imgui.WindowFlags.NoCollapse)
+    imgui.Begin("CATEGORIAS DE CADEIAS", show_jail_categories, imgui.WindowFlags.NoCollapse)
 
     imgui.TextColored(imgui.ImVec4(0.0, 1.0, 1.0, 1.0), "SELECIONE UMA CATEGORIA:")
     imgui.Separator()
@@ -737,9 +622,9 @@ local function draw_jail_categories_window()
         "200 MINUTOS",
         "300 MINUTOS",
         "KICKS",
-        "BANIMENTOS TEMPORÁRIOS",
+        "BANIMENTOS TEMPORARIOS",
         "BANIMENTOS PERMANENTES",
-        "Tabela da censura (Mute Temporário de comunicação)"
+        "TABELA DE CENSURA (MUTE TEMPORARIO)"
     }
 
     for i, category in ipairs(categories) do
@@ -769,7 +654,7 @@ local function draw_jail_window()
     style.WindowBorderSize = 5.0
 
     imgui.PushStyleColor(imgui.Col.Border, border_colors[border_color_index])
-    imgui.Begin("TABELA DE PUNIÇÕES", show_jail_window, imgui.WindowFlags.NoCollapse)
+    imgui.Begin("TABELA DE PUNICOES", show_jail_window, imgui.WindowFlags.NoCollapse)
 
     local categories = {
         "60 MINUTOS",
@@ -778,9 +663,9 @@ local function draw_jail_window()
         "200 MINUTOS",
         "300 MINUTOS",
         "KICKS",
-        "BANIMENTOS TEMPORÁRIOS",
+        "BANIMENTOS TEMPORARIOS",
         "BANIMENTOS PERMANENTES",
-        "Tabela da censura (Mute Temporário de comunicação)"
+        "TABELA DE CENSURA (MUTE TEMPORARIO)"
     }
     local selected = categories[selected_category[0] + 1]
     imgui.TextColored(imgui.ImVec4(0.0, 1.0, 1.0, 1.0), selected)
@@ -811,7 +696,7 @@ local function draw_discord_categories_window()
     style.WindowBorderSize = 5.0
 
     imgui.PushStyleColor(imgui.Col.Border, border_colors[border_color_index])
-    imgui.Begin("Categorias de Regras Discord", show_discord_categories, imgui.WindowFlags.NoCollapse)
+    imgui.Begin("CATEGORIAS DE REGRAS DISCORD", show_discord_categories, imgui.WindowFlags.NoCollapse)
 
     imgui.TextColored(imgui.ImVec4(0.0, 1.0, 1.0, 1.0), "SELECIONE UMA CATEGORIA:")
     imgui.Separator()
@@ -884,12 +769,12 @@ local function draw_search_window()
     style.WindowBorderSize = 5.0
 
     imgui.PushStyleColor(imgui.Col.Border, border_colors[border_color_index])
-    imgui.Begin("Resultados da Pesquisa", show_search_window, imgui.WindowFlags.NoCollapse)
+    imgui.Begin("RESULTADOS DA PESQUISA", show_search_window, imgui.WindowFlags.NoCollapse)
 
     imgui.TextColored(imgui.ImVec4(0.0, 1.0, 1.0, 1.0), "BIBLIA RP ENCONTRADA:")
     imgui.SameLine()
     imgui.SetCursorPosX(imgui.GetWindowWidth() - 200)
-    if imgui.Button("CÓDIGOS RELACIONADOS", imgui.ImVec2(180, 30)) then
+    if imgui.Button("CODIGOS RELACIONADOS", imgui.ImVec2(180, 30)) then
         show_related_codes_window[0] = true
     end
 
@@ -919,9 +804,9 @@ local function draw_related_codes_window()
     style.WindowBorderSize = 5.0
 
     imgui.PushStyleColor(imgui.Col.Border, border_colors[border_color_index])
-    imgui.Begin("Palavras-Chave Registradas", show_related_codes_window, imgui.WindowFlags.NoCollapse)
+    imgui.Begin("PALAVRAS-CHAVE REGISTRADAS", show_related_codes_window, imgui.WindowFlags.NoCollapse)
 
-    imgui.TextColored(imgui.ImVec4(0.0, 1.0, 1.0, 1.0), "PALAVRAS-CHAVE DISPONÍVEIS:")
+    imgui.TextColored(imgui.ImVec4(0.0, 1.0, 1.0, 1.0), "PALAVRAS-CHAVE DISPONIVEIS:")
 
     imgui.BeginChild("RelatedCodesContent", imgui.ImVec2(0, 0), true, imgui.WindowFlags.AlwaysVerticalScrollbar)
     for keyword, _ in pairs(keyword_mappings) do
